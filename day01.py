@@ -1,6 +1,6 @@
 from machines.day01 import Operator
 
-op = Operator(day_num=1)
+op = Operator(day_num=1, to_int=True)
 
 print("# Part One")
 print(op.exec(entries=2))
