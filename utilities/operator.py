@@ -7,4 +7,4 @@ class Base:
             self.load_data(day_num)
 
     def load_data(self, day_num):
-        self.data = [int(item) for item in PuzzleInput.get(day_num)]
+        self.data = PuzzleInput.get(day_num)
