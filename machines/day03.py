@@ -11,6 +11,6 @@ class Operator(Base):
 
         while pos[1] < len(self.data):
             counter += 1 if self.data[pos[1]][pos[0] % len(self.data[0])] == "#" else 0
-            pos = list(map(sum, zip(pos, slope)))
+            pos = [p + s for p, s in zip(pos, slope)]
 
         return counter
