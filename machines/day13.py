@@ -1,6 +1,5 @@
 import math
 
-from functools import reduce
 from utilities.operator import Base
 
 
@@ -37,18 +36,16 @@ class Operator(Base):
         mods = {int(bus_id): (int(bus_id) - idx) % int(bus_id) for idx, bus_id in enumerate(self.__bus_schedules) if bus_id != "x"}
         mx = list(mods.keys())
         vx = list(mods.values())
-        multiply = reduce(lambda acc, iter: acc * iter, mx, 1)
+        multiply = math.prod(mx)
         Mx = [(multiply // item) for item in mx]
         tx = []
         for idx, val in enumerate(mx):
-            t = 1
+            t = 0
             while 1:
+                t += 1
                 if (t * Mx[idx]) % val == 1:
-                    tx += [t]
                     break
-                else:
-                    t += 1
+            tx += [t]
+
         result = sum([vx[i] * tx[i] * Mx[i] for i in range(len(mx))])
-        while result - multiply > 0:
-            result -= multiply
-        return result
+        return result % multiply
