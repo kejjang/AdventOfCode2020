@@ -1,9 +1,9 @@
 import math
 
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         self.__estimate_time = int(self.data[0])
         self.__bus_schedules = self.data[1].split(",")

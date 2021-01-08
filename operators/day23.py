@@ -1,4 +1,4 @@
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
 class LinkedListNode:
@@ -8,7 +8,7 @@ class LinkedListNode:
         self.right = None
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         self.__parse_cups()
         return (parts := {1: self.__part1, 2: self.__part2}).get(part if part in parts else 1)()

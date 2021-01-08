@@ -1,6 +1,6 @@
 import math
 
-from machines.day03 import Operator
+from operators.day03 import Operator
 
 op = Operator(day_num=3)
 

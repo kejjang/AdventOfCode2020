@@ -1,10 +1,10 @@
 from itertools import product
 from collections import defaultdict
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
 # this code was written in rush, super ugly, and will be refactor later
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         return (parts := {1: self.__part1, 2: self.__part2}).get(part if part in parts else 1)()
 

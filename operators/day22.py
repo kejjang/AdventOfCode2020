@@ -1,22 +1,22 @@
 import json
 
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         self.__parse_deck_data()
         return (parts := {1: self.__part1, 2: self.__part2}).get(part if part in parts else 1)()
 
     def __part1(self) -> int:
         decks = json.loads(json.dumps(self.__decks))
-        winner, decks = self.__play(decks=decks, show_steps=True)
+        winner, decks = self.__play(decks=decks, show_steps=False)
         return self.__get_score(decks[winner])
 
     def __part2(self) -> int:
         self.__game_count = 1
         decks = json.loads(json.dumps(self.__decks))
-        winner, decks = self.__play_recursive(game_idx=1, decks=decks, show_steps=True)
+        winner, decks = self.__play_recursive(game_idx=1, decks=decks, show_steps=False)
         return self.__get_score(decks[winner])
 
     def __parse_deck_data(self):

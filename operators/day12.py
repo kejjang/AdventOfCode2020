@@ -1,8 +1,8 @@
 from typing import List
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         self.__move = {"N": [0, -1], "S": [0, 1], "E": [1, 0], "W": [-1, 0]}
         self.__turn = {"L": ["N", "W", "S", "E"], "R": ["N", "E", "S", "W"]}

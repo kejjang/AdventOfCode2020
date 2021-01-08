@@ -1,4 +1,4 @@
-from machines.day18 import Operator
+from operators.day18 import Operator
 
 op = Operator(day_num=18)
 

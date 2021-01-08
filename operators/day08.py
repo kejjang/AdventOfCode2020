@@ -1,10 +1,10 @@
 import copy
 
 from typing import List, Dict
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     __accumulator = 0
     __ran = []
     __p = 0

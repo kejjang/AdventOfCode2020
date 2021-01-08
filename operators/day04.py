@@ -1,10 +1,10 @@
 import re
 
 from itertools import chain
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     keys = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid", "cid"]
 
     def exec(self, rule: int = 1):

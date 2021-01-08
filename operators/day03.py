@@ -1,7 +1,7 @@
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, slope=False):
         if slope is False:
             return False

@@ -1,9 +1,9 @@
 import json
 
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         self.__tiles = {}
         self.__pos = {"e": [1, 0], "se": [0.5, 1], "sw": [-0.5, 1], "w": [-1, 0], "nw": [-0.5, -1], "ne": [0.5, -1]}

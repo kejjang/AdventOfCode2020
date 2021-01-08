@@ -1,9 +1,9 @@
 import re
 
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, part: int = 1):
         self.data = [int(i) for i in self.data]
         return (parts := {1: self.__part1, 2: self.__part2}).get(part if part in parts else 1)(self.data)

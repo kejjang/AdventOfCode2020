@@ -1,9 +1,9 @@
 import re
 
-from utilities.operator import Base
+from utilities.operator import OperatorBase
 
 
-class Operator(Base):
+class Operator(OperatorBase):
     def exec(self, rule: int = 1):
         rules = {1: self.__rule1, 2: self.__rule2}
         if rule not in rules:
